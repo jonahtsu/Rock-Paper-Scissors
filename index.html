@@ -1,0 +1,49 @@
+<html>
+<body>
+<script>
+
+
+function computerPlay() {
+    randomNum= Math.floor(Math.random() * Math.floor(3));
+    if (randomNum == "2") {
+        return "Rock";
+    }
+        else if (randomNum== "1"){
+        return "Paper";
+             }
+        else {
+            return "Scissors";
+    }
+}
+let computerSelection = computerPlay()
+let playerSelection = prompt("Enter your choice", '')
+
+//console.log(computerPlay())
+//console.log(playerSelection)
+
+function playRound() {
+    if (playerSelection == computerSelection){
+
+        let result = ('It\'s a tie. You both chose ' + playerSelection + '')
+        console.log(result);
+    }
+    else if ((playerSelection == 'Rock' && computerSelection == 'Scissors') || 
+            (playerSelection == 'Paper' && computerSelection == 'Rock') ||  
+            (playerSelection == 'Scissors' && computerSelection == 'Paper')){
+        let result = ('Player Wins with '+playerSelection+ ' over ' +computerSelection+ '')
+        console.log(result);
+}
+    else {
+        let result = "Computer Wins!"
+        console.log(result);
+    }
+}
+
+ playRound();    
+    
+  
+
+
+</script>
+</body>
+</html>
